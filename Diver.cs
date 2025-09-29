@@ -164,7 +164,7 @@ internal class Diver : MonoBehaviour
     /// <param name="dt"></param>
     public void UpdateSwimSpeed(float dt)
     {
-        float multiplier = ZInput.GetButton("Run") ? dt : -dt;
+        float multiplier = (ZInput.GetButton("Run") || ZInput.GetButton("JoyRun")) ? dt : -dt;
         float swimSpeed = player.m_swimSpeed + (player.m_swimAcceleration * multiplier);
         player.m_swimSpeed = Mathf.Clamp(swimSpeed, BaseSwimSpeed, UnderTheSea.Instance.MaxSwimSpeed.Value);
     }

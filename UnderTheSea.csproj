@@ -56,7 +56,7 @@
 		<Content Include="Package\icon.png" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="JotunnLib" Version="2.23.2" />
+		<PackageReference Include="JotunnLib" Version="2.26.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Publish\Nexus\" />

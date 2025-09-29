@@ -11,11 +11,14 @@ internal static class WaterCameraPatches
     private static float WaterLevelCamera = 0f;
     private static float WaterLevelPlayer = 0f;
     private static bool ShouldResetCamera = false;
-    private const float UnderWaterCameraMinWaterDistance = -5000f;
+    private const float UnderWaterCameraMinWaterDistance = -1000f;
     private static float? CachedMinWaterDistance = null;
 
     /// <summary>
-    ///     Sets m_minWaterDistance to -5000f and caches previous
+    ///     Note from 0.1.3: Changed minWaterDistance from -5000f to -1000f
+    ///                      in an effort to reduce graphical glitches
+    ///                      while swimming on the surface.
+    ///     Sets m_minWaterDistance to -1000f and caches previous
     ///     value if there is not a cached value already.
     /// </summary>
     /// <param name="gameCamera"></param>

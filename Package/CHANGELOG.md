@@ -7,6 +7,16 @@
 			<th align="center">Version</th>
 			<th align="center">Notes</th>
 		</tr>
+	    <tr>
+			<td align="center">0.1.3</td>
+			<td align="left">
+				<ul>
+					<li>Added gamepad support.</li>
+					<li>Updated BepInEx to 5.4.2333.</li>
+					<li>Updated Jotunn to 2.26.1.</li>
+				</ul>
+			</td>
+		</tr>
 		<tr>
 			<td align="center">0.1.2</td>
 			<td align="left">

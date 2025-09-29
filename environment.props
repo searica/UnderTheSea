@@ -7,7 +7,7 @@
 		<ModProfilePath>$(r2ModManPath)\Mod-Debug</ModProfilePath>
 		
 		<!-- Needs to be your path to the base Valheim folder -->
-		<VALHEIM_INSTALL Condition="!Exists('$(VALHEIM_INSTALL)')">c:\Program Files (x86)\Steam\steamapps\common\Valheim</VALHEIM_INSTALL>
+		<VALHEIM_INSTALL Condition="!Exists('$(VALHEIM_INSTALL)')">C:\Program Files (x86)\Steam\steamapps\common\Valheim</VALHEIM_INSTALL>
 		<VALHEIM_SERVER Condition="!Exists('$(VALHEIM_SERVERR)')">C:\Program Files (x86)\Steam\steamapps\common\Valheim dedicated server</VALHEIM_SERVER>
 		<STEAMWORKS Condition="!Exists('$(STEAMWORKS)')">$(VALHEIM_INSTALL)\valheim_Data\Managed\publicized_assemblies\com.rlabrecque.steamworks.net_publicized.dll</STEAMWORKS>
 		<BEPINEX_PATH>$(ModProfilePath)\BepInEx</BEPINEX_PATH>

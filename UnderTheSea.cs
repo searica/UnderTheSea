@@ -7,7 +7,7 @@ using Jotunn.Managers;
 using Configs;
 using Logging;
 using Jotunn.Extensions;
-
+using ConfigFileWatcher = Configs.ConfigFileWatcher;
 namespace UnderTheSea;
 
 [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
@@ -23,7 +23,7 @@ internal sealed class UnderTheSea : BaseUnityPlugin
     public const string PluginName = "UnderTheSea";
     internal const string Author = "Searica";
     public const string PluginGUID = $"{Author}.Valheim.{PluginName}";
-    public const string PluginVersion = "0.1.2";
+    public const string PluginVersion = "0.1.3";
 
     internal static UnderTheSea Instance;
     internal static ConfigFile ConfigFile;

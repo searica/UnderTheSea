@@ -57,11 +57,11 @@ internal static class DivingPatches
         }
  
         diver.UpdateSwimSpeed(dt);
-        if (ZInput.GetButton("Jump") && diver.IsUnderSurface())
+        if ((ZInput.GetButton("Jump") || ZInput.GetButton("JoyJump")) && diver.IsUnderSurface())
         {
             diver.Dive(dt, ascend: true, out __state);
         }
-        else if (ZInput.GetButton("Crouch") && diver.CanDive())
+        else if ((ZInput.GetButton("Crouch") || ZInput.GetButton("JoyCrouch")) && diver.CanDive())
         {
             diver.Dive(dt, ascend: false, out __state);
         }
