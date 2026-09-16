@@ -3,7 +3,6 @@ using BepInEx;
 using BepInEx.Configuration;
 using HarmonyLib;
 using Jotunn.Utils;
-using Jotunn.Managers;
 using Configs;
 using Logging;
 using Jotunn.Extensions;
@@ -23,7 +22,7 @@ internal sealed class UnderTheSea : BaseUnityPlugin
     public const string PluginName = "UnderTheSea";
     internal const string Author = "Searica";
     public const string PluginGUID = $"{Author}.Valheim.{PluginName}";
-    public const string PluginVersion = "0.1.2";
+    public const string PluginVersion = "1.0.0";
 
     internal static UnderTheSea Instance;
     internal static ConfigFile ConfigFile;
