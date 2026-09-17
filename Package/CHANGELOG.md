@@ -8,6 +8,14 @@
 			<th align="center">Notes</th>
 		</tr>
 		<tr>
+			<td align="center">1.1.0</td>
+			<td align="left">
+				<ul>
+					<li>Allow negative stamina drain when at rest underwater to allow stamina to regen while diving if you hold still.</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
 			<td align="center">1.0.0</td>
 			<td align="left">
 				<ul>

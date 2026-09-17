@@ -1,7 +1,7 @@
 {
     "name": "UnderTheSea",
     "author": "Searica",
-    "version_number": "1.0.0",
+    "version_number": "1.1.0",
     "website_url": "https://discord.gg/sFmGTBYN6n",
     "description": "Diving mod that lets you go down using crouch and up using jump.",
     "dependencies": [

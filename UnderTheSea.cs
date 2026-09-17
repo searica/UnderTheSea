@@ -22,7 +22,7 @@ internal sealed class UnderTheSea : BaseUnityPlugin
     public const string PluginName = "UnderTheSea";
     internal const string Author = "Searica";
     public const string PluginGUID = $"{Author}.Valheim.{PluginName}";
-    public const string PluginVersion = "1.0.0";
+    public const string PluginVersion = "1.1.0";
 
     internal static UnderTheSea Instance;
     internal static ConfigFile ConfigFile;
@@ -113,8 +113,8 @@ internal sealed class UnderTheSea : BaseUnityPlugin
             GlobalSection,
             "Underwater Stamina Drain",
             0.5f,
-            "How fast you drain stamina while floating underwater without moving as a multiple of the default swimming drain.",
-            acceptableValues: new AcceptableValueRange<float>(0f, 2f),
+            "How fast you drain stamina while floating underwater without moving as a multiple of the default swimming drain. If set to a negative value then you will regen stamina while resting underwater.",
+            acceptableValues: new AcceptableValueRange<float>(-0.5f, 2f),
             synced: true
         );
 

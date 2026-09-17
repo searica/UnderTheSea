@@ -30,6 +30,8 @@ internal class Diver : MonoBehaviour
     public float RestingStaminaRegenDelay => -UnderTheSea.Instance.RestingStaminaRegenDelay.Value * player.m_staminaRegenDelay;
     public float RestingStaminaRegenRate => UnderTheSea.Instance.RestingStaminaRegenRate.Value * player.m_staminaRegen;
 
+    public float RestingStaminaDrainUnderWater => UnderTheSea.Instance.UnderwaterRestingStaminaDrainRate.Value * player.m_staminaRegen;
+
     public void Awake()
     {
         player = GetComponent<Player>();    
@@ -121,7 +123,13 @@ internal class Diver : MonoBehaviour
     /// <returns></returns>
     public bool IsRestingInWater()
     {
-        return !IsDiving() && player.IsSwimming() && player.GetVelocity().magnitude < 1.0f;
+        return !IsDiving() && player.IsSwimming() && !IsMoving();
+    }
+
+
+    public bool IsMoving()
+    {
+        return player.GetVelocity().magnitude >= 1.0f;
     }
 
     public void RegenRestingStamina(float dt)
@@ -136,13 +144,28 @@ internal class Diver : MonoBehaviour
         }
     }
 
-    public void DrainDivingStamina(float dt)
+    /// <summary>
+    ///     Update stamina drain or regen depending on config settings for stamina at rest underwater. Also updates XP for swim skill when stamina is being drained.
+    /// </summary>
+    /// <param name="dt"></param>
+    /// <param name="targetVel"></param>
+    public void UpdateStaminaAtRestUnderWater(float dt, Vector3 targetVel)
     {
         float skillFactor = player.m_skills.GetSkillFactor(Skills.SkillType.Swim);
-        float num = Mathf.Lerp(player.m_swimStaminaDrainMinSkill, player.m_swimStaminaDrainMaxSkill, skillFactor);
-        num += num * player.GetEquipmentSwimStaminaModifier();
-        player.m_seman.ModifySwimStaminaUsage(num, ref num);
-        player.UseStamina(dt * num * Game.m_moveStaminaRate * UnderTheSea.Instance.UnderwaterRestingStaminaDrainRate.Value);
+        if (RestingStaminaDrainUnderWater < 0f  && targetVel.magnitude < 1.0f)
+        {
+            float regenSpeed = (1f + skillFactor) * Mathf.Abs(RestingStaminaDrainUnderWater);
+            player.m_stamina = Mathf.Min(player.GetMaxStamina(), player.m_stamina + (regenSpeed * dt * Game.m_staminaRegenRate));
+        }
+        else
+        {
+            float num = Mathf.Lerp(player.m_swimStaminaDrainMinSkill, player.m_swimStaminaDrainMaxSkill, skillFactor);
+            num += num * player.GetEquipmentSwimStaminaModifier();
+            player.m_seman.ModifySwimStaminaUsage(num, ref num);
+            player.UseStamina(dt * num * Game.m_moveStaminaRate * UnderTheSea.Instance.UnderwaterRestingStaminaDrainRate.Value);
+            UpdateSwimSkill(dt); // update skill since stamina is being consumed
+        }
+        
     }
 
     /// <summary>

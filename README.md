@@ -10,7 +10,7 @@ change configs by editing the config file on disk as this mod has a built in fil
 - Hold jump to swim upwards.
 - Hold the run key while swimming to slowly accelerate.
 - Configurable stamina while resting on the surface of the water.
-- Configure stamina drain when resting underwater.
+- Configure stamina drain when resting underwater (negative values allow for stamina to regen while resting underwater).
 
 ## Donations/Tips
 My mods will always be free to use but if you feel like saying thanks you can tip/donate.
