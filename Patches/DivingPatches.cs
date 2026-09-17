@@ -161,7 +161,7 @@ internal static class DivingPatches
 
         if (diver.IsDiving())
         {
-            diver.UpdateStaminaAtRestUnderWater(dt, targetVel);
+            diver.UpdateStaminaUnderWater(dt, targetVel);
         }
         else if (diver.IsRestingInWater())
         {

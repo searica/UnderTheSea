@@ -149,7 +149,7 @@ internal class Diver : MonoBehaviour
     /// </summary>
     /// <param name="dt"></param>
     /// <param name="targetVel"></param>
-    public void UpdateStaminaAtRestUnderWater(float dt, Vector3 targetVel)
+    public void UpdateStaminaUnderWater(float dt, Vector3 targetVel)
     {
         float skillFactor = player.m_skills.GetSkillFactor(Skills.SkillType.Swim);
         if (RestingStaminaDrainUnderWater < 0f  && targetVel.magnitude < 1.0f)
