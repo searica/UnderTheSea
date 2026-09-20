@@ -6,6 +6,6 @@
     "description": "Diving mod that lets you go down using crouch and up using jump.",
     "dependencies": [
         "denikson-BepInExPack_Valheim-5.4.2350",
-        "ValheimModding-Jotunn-2.30.0"
+        "ValheimModding-Jotunn-2.30.1"
     ]
 }

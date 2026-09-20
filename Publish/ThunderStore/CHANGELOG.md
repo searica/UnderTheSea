@@ -12,6 +12,7 @@
 			<td align="left">
 				<ul>
 					<li>Allow negative stamina drain when at rest underwater to allow stamina to regen while diving if you hold still.</li>
+					<li>Added note in readme about crouch not being prevented when surfacing from diving if using Valheim Toggle Movement Mod and not disabling specific config settings.</li>
 				</ul>
 			</td>
 		</tr>

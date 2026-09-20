@@ -8,10 +8,19 @@
 			<th align="center">Notes</th>
 		</tr>
 		<tr>
+			<td align="center">1.1.1</td>
+			<td align="left">
+				<ul>
+					<li>Made sure that the crouch prevention from UnderTheSea will override the crouch toggling from Valheim Toggle Movement Mod if a player is swimming.</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
 			<td align="center">1.1.0</td>
 			<td align="left">
 				<ul>
 					<li>Allow negative stamina drain when at rest underwater to allow stamina to regen while diving if you hold still.</li>
+					<li>Added note in readme about crouch not being prevented when surfacing from diving if using Valheim Toggle Movement Mod and not disabling specific config settings.</li>
 				</ul>
 			</td>
 		</tr>

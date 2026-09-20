@@ -12,6 +12,9 @@ change configs by editing the config file on disk as this mod has a built in fil
 - Configurable stamina while resting on the surface of the water.
 - Configure stamina drain when resting underwater (negative values allow for stamina to regen while resting underwater).
 
+## Compatability
+If you use Valheim Toggle Movement Mod, then make sure to set the Run to Crouch Toggle config setting to false, otherwise you may be crouching whenever you surface from diving.
+
 ## Donations/Tips
 My mods will always be free to use but if you feel like saying thanks you can tip/donate.
 

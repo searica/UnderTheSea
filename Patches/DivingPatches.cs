@@ -174,6 +174,7 @@ internal static class DivingPatches
     /// </summary>
     /// <param name="__instance"></param>
     [HarmonyPrefix]
+    [HarmonyBefore("afilbert.ValheimToggleMovementMod")]
     [HarmonyPatch(typeof(Player), nameof(Player.SetControls))]
     private static void PreventCrouchWhileSwimming(Player __instance, ref bool crouch)
     {
@@ -183,7 +184,26 @@ internal static class DivingPatches
         }
         if (__instance.IsSwimming())
         {
+            __instance.m_crouchToggled = false;
             crouch = false;
         }
     }
+
+    ///// <summary>
+    /////     Prevent crouching while swimming.
+    ///// </summary>
+    ///// <param name="__instance"></param>
+    //[HarmonyPrefix]
+    //[HarmonyPatch(typeof(Player), nameof(Player.UpdateCrouch))]
+    //private static void PreventCrouchUpdateWhileSwimming(Player __instance)
+    //{
+    //    if (!Utils.IsValidLocalPlayer(__instance))
+    //    {
+    //        return;
+    //    }
+    //    if (__instance.IsSwimming() || (__instance.TryGetComponent(out Diver diver) && diver.IsDiving()))
+    //    {
+    //        __instance.SetCrouch(false);
+    //    }
+    //}
 }
